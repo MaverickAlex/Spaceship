@@ -58,7 +58,7 @@ public class Game1 : Game
 
     _spriteBatch.Begin();
     _spriteBatch.Draw(_spaceSprite, new Vector2(0, 0), Color.White);
-    _spriteBatch.Draw(_shipSprite, new Vector2(player.Position.X - 34, player.Position.Y - 50), Color.White);
+    _spriteBatch.Draw(_shipSprite,  player.GetPosition(), Color.White);
     _spriteBatch.End();
 
     base.Draw(gameTime);

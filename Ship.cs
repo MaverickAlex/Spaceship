@@ -27,4 +27,8 @@ public class Ship
       Position.Y += Speed;
     }
   }
+  public Vector2 GetPosition()
+  {
+    return new Vector2(Position.X - 34, Position.Y - 50);
+  }
 }
