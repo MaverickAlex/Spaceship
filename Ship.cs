@@ -5,26 +5,26 @@ namespace Spaceship;
 
 public class Ship
 {
-
+  private const int Speed = 3;
   public Vector2 Position  = new Vector2(100, 100);
   public void ShipUpdate(GameTime gameTime)
   {
     KeyboardState kbState = Keyboard.GetState();
     if (kbState.IsKeyDown(Keys.Left))
     {
-      Position.X -= 1;
+      Position.X -= Speed;
     }
     if (kbState.IsKeyDown(Keys.Right))
     {
-      Position.X += 1;
+      Position.X += Speed;
     }
     if (kbState.IsKeyDown(Keys.Up))
     {
-      Position.Y -= 1;
+      Position.Y -= Speed;
     }
     if (kbState.IsKeyDown(Keys.Down))
     {
-      Position.Y += 1;
+      Position.Y += Speed;
     }
   }
 }
