@@ -16,6 +16,7 @@ public class Game1 : Game
   private SpriteFont _timerFont;
 
   Ship player = new Ship();
+  Asteroid testAsteroid = new Asteroid(250);
   public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
@@ -48,6 +49,7 @@ public class Game1 : Game
       Exit();
 
     player.ShipUpdate(gameTime);
+    testAsteroid.Update(gameTime);
 
     base.Update(gameTime);
   }
@@ -59,6 +61,7 @@ public class Game1 : Game
     _spriteBatch.Begin();
     _spriteBatch.Draw(_spaceSprite, new Vector2(0, 0), Color.White);
     _spriteBatch.Draw(_shipSprite,  player.GetPosition(), Color.White);
+    _spriteBatch.Draw(_asteroidSprite, testAsteroid.GetPosition(), Color.White);
     _spriteBatch.End();
 
     base.Draw(gameTime);
