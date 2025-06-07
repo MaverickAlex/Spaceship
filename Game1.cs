@@ -14,6 +14,8 @@ public class Game1 : Game
   private Texture2D _spaceSprite;
   private SpriteFont _gameFont;
   private SpriteFont _timerFont;
+
+  Ship player = new Ship();
   public Game1()
   {
     _graphics = new GraphicsDeviceManager(this);
@@ -56,6 +58,7 @@ public class Game1 : Game
 
     _spriteBatch.Begin();
     _spriteBatch.Draw(_spaceSprite, new Vector2(0, 0), Color.White);
+    _spriteBatch.Draw(_shipSprite, new Vector2(player.Position.X - 34, player.Position.Y - 50), Color.White);
     _spriteBatch.End();
 
     base.Draw(gameTime);
