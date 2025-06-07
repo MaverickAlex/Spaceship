@@ -54,7 +54,9 @@ public class Game1 : Game
   {
     GraphicsDevice.Clear(Color.CornflowerBlue);
 
-    // TODO: Add your drawing code here
+    _spriteBatch.Begin();
+    _spriteBatch.Draw(_spaceSprite, new Vector2(0, 0), Color.White);
+    _spriteBatch.End();
 
     base.Draw(gameTime);
   }
