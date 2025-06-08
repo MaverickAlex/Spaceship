@@ -69,6 +69,15 @@ public class Game1 : Game
       _spriteBatch.Draw(_asteroidSprite, asteroid.GetPosition(), Color.White);
     }
 
+    if (!gameController.InGame)
+    {
+      string message = "Press Enter to Begin!";
+      Vector2 sizeOfText = _gameFont.MeasureString(message);
+      int halfWidth = _graphics.PreferredBackBufferWidth / 2;
+      Vector2 messagePosition = new Vector2(halfWidth - sizeOfText.X/2, 200);
+      _spriteBatch.DrawString(_gameFont, message, messagePosition, Color.White);
+    }
+
     _spriteBatch.End();
 
     base.Draw(gameTime);
