@@ -14,19 +14,19 @@ public class Ship
     float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
     KeyboardState kbState = Keyboard.GetState();
-    if (kbState.IsKeyDown(Keys.Left))
+    if (kbState.IsKeyDown(Keys.Left) && Position.X > 0)
     {
       Position.X -= Speed * dt;
     }
-    if (kbState.IsKeyDown(Keys.Right))
+    if (kbState.IsKeyDown(Keys.Right) && Position.X < 1280)
     {
       Position.X += Speed * dt;
     }
-    if (kbState.IsKeyDown(Keys.Up))
+    if (kbState.IsKeyDown(Keys.Up) && Position.Y > 0)
     {
       Position.Y -= Speed * dt;
     }
-    if (kbState.IsKeyDown(Keys.Down))
+    if (kbState.IsKeyDown(Keys.Down) && Position.Y < 720)
     {
       Position.Y += Speed * dt;
     }

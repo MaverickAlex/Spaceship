@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Linq;
 
 namespace Spaceship;
@@ -89,6 +90,7 @@ public class Game1 : Game
       Vector2 messagePosition = new Vector2(halfWidth - sizeOfText.X/2, 200);
       _spriteBatch.DrawString(_gameFont, message, messagePosition, Color.White);
     }
+    _spriteBatch.DrawString(_timerFont, $"Time: {Math.Floor(gameController._totalTime)}", new Vector2(3, 3), Color.White);
 
     _spriteBatch.End();
 

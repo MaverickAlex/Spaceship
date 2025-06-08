@@ -10,6 +10,7 @@ public class Controller
   private double _timer = 2;
   double _maxTime = 2;
   private int nextSpeed = 240;
+  public double _totalTime = 0;
 
   public bool InGame { get; set; } = false;
 
@@ -18,6 +19,7 @@ public class Controller
     if (InGame)
     {
       _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+      _totalTime += gameTime.ElapsedGameTime.TotalSeconds;
     }
     else
     {
@@ -25,6 +27,10 @@ public class Controller
       if (kbState.IsKeyDown(Keys.Enter))
       {
         InGame = true;
+        _totalTime = 0;
+        _timer = 2;
+        _maxTime = 2;
+        nextSpeed = 240;
       }
     }
 
