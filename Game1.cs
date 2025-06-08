@@ -48,7 +48,11 @@ public class Game1 : Game
     if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
       Exit();
 
-    player.ShipUpdate(gameTime);
+    if (gameController.InGame)
+    {
+      player.ShipUpdate(gameTime);
+    }
+
     gameController.Update(gameTime);
     base.Update(gameTime);
   }

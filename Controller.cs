@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
 namespace Spaceship;
@@ -9,9 +10,24 @@ public class Controller
   private double _timer = 2;
   double _maxTime = 2;
   private int nextSpeed = 240;
+
+  public bool InGame { get; set; } = false;
+
   public void Update(GameTime gameTime)
   {
-    _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+    if (InGame)
+    {
+      _timer -= gameTime.ElapsedGameTime.TotalSeconds;
+    }
+    else
+    {
+      KeyboardState kbState = Keyboard.GetState();
+      if (kbState.IsKeyDown(Keys.Enter))
+      {
+        InGame = true;
+      }
+    }
+
     if (_timer <= 0)
     {
       asteroids.Add(new Asteroid(nextSpeed));

@@ -5,8 +5,9 @@ namespace Spaceship;
 
 public class Ship
 {
+  public static Vector2 DefaultPostion = new Vector2(640, 360);
   private const int Speed = 180; // pixels per second
-  private Vector2 Position  = new Vector2(100, 100);
+  private Vector2 Position = DefaultPostion;
   public void ShipUpdate(GameTime gameTime)
   {
     float dt = (float)gameTime.ElapsedGameTime.TotalSeconds;
