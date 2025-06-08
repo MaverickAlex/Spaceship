@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using Vector2 = System.Numerics.Vector2;
 
 namespace Spaceship;
@@ -12,6 +13,8 @@ public class Asteroid
   public Asteroid(int speed)
   {
     Speed = speed;
+
+    Position = new Vector2(1380,Random.Shared.Next(0, 721));
   }
 
   public Vector2 GetPosition()
