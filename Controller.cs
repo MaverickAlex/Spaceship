@@ -16,6 +16,11 @@ public class Controller
       asteroids.Add(new Asteroid(250));
       _timer = 2;
     }
+
+    foreach (Asteroid asteroid in asteroids)
+    {
+      asteroid.Update(gameTime);
+    }
   }
 
 }

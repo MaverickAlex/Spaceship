@@ -60,7 +60,11 @@ public class Game1 : Game
     _spriteBatch.Begin();
     _spriteBatch.Draw(_spaceSprite, new Vector2(0, 0), Color.White);
     _spriteBatch.Draw(_shipSprite,  player.GetPosition(), Color.White);
-    // _spriteBatch.Draw(_asteroidSprite, testAsteroid.GetPosition(), Color.White);
+    foreach (Asteroid asteroid in gameController.asteroids)
+    {
+      _spriteBatch.Draw(_asteroidSprite, asteroid.GetPosition(), Color.White);
+    }
+
     _spriteBatch.End();
 
     base.Draw(gameTime);
