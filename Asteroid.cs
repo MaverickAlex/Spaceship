@@ -8,7 +8,7 @@ public class Asteroid
 {
   private Vector2 Position = new Vector2(600, 300);
   private int Speed;
-  readonly private int Radius = 59;
+  public readonly int Radius = 59;
 
   public Asteroid(int speed)
   {

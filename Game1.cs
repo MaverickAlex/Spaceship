@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Linq;
 
 namespace Spaceship;
 
@@ -54,6 +55,17 @@ public class Game1 : Game
     }
 
     gameController.Update(gameTime);
+    foreach (Asteroid asteroid in gameController.asteroids.ToList())
+    {
+      asteroid.Update(gameTime);
+      int sum = asteroid.Radius + player.Radius;
+      if (Vector2.Distance(asteroid.GetPosition(), player.GetPosition()) < sum)
+      {
+        gameController.InGame = false;
+        player.SetPosition(Ship.DefaultPostion);
+        gameController.asteroids.Clear();
+      }
+    }
     base.Update(gameTime);
   }
 

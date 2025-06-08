@@ -43,10 +43,7 @@ public class Controller
       }
     }
 
-    foreach (Asteroid asteroid in asteroids)
-    {
-      asteroid.Update(gameTime);
-    }
+
   }
 
 }
